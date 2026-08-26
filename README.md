@@ -107,6 +107,7 @@ Run the smoke suite using:
 ```text
 mvn test -DsuiteXmlFile=smoke.xml
 ```
+
 ## Browser Support
 
 The tests support the following browsers:
@@ -121,7 +122,7 @@ The browser can be selected using the Maven system property:
 mvn clean test -Dbrowser=chrome
 mvn clean test -Dbrowser=edge
 mvn clean test -Dbrowser=firefox
-
+```
 ### Parallel Testing
 
 The `parallel-testing.xml` file is used to execute multiple test cases in parallel.
