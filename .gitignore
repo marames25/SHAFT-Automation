@@ -20,9 +20,14 @@ test-output/
 # Logs
 *.log
 
+# Generated Reports
+execution-summary/
+performanceReport/
+log/
+
 # OS
 .DS_Store
 Thumbs.db
 
-# Environment variables
+# Environment Variables
 .env
