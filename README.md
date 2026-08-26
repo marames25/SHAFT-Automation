@@ -1,66 +1,166 @@
+# SHAFT Automation Task #2
 
+## Overview
 
-Project: SHAFT Automation Testing
+Web automation testing project built using **SHAFT Engine, Selenium WebDriver, Java, and TestNG**.
 
-Website: https://www.saucedemo.com
+The project automates login and checkout scenarios on the **SauceDemo** application.
 
-Technologies:
+**Website:** https://www.saucedemo.com
+
+---
+
+## Tech Stack
+
 - Java
-- Selenium
+- Selenium WebDriver
 - SHAFT Engine
 - TestNG
 - Maven
 - Page Object Model (POM)
-- Excel
-- JSON
-- DataProvider
-- Allure
+- Excel & JSON Test Data
+- Allure Reports
 
-The project includes:
+---
 
-1. Login scenarios using Excel:
-    - Valid login
-    - Invalid login
-    - Locked user
+## Test Coverage
 
-2. Login scenarios using JSON:
-    - Valid login
-    - Invalid login
-    - Locked user
+### Login
 
-3. Checkout scenario using TestNG DataProvider:
-    - Login
-    - Add two products to cart
-    - Checkout
-    - Complete the order
+Login scenarios are implemented using both **Excel** and **JSON** test data:
 
-4. TestNG XML smoke suite.
+- Valid Login
+- Invalid Login
+- Locked User Login
 
-5. Cross-browser execution:
-    - Chrome
-    - Edge
-    - Firefox
+### Checkout
 
-6. Bonus:
-    - Parallel execution of 2–3 test cases
-    - Screen recording of the parallel execution
-    - Allure execution report
+- Login with a valid user
+- Add two products to the cart
+- Proceed to checkout
+- Enter checkout information
+- Complete the order
+- Verify successful order completion
 
-The project follows the Page Object Model. The LoginPage and other page classes contain the locators and actions, while the test classes contain only the test logic.
+---
 
-Mention that all tests were successfully executed.
+## Project Structure
 
-Include short sections for:
-- Project Overview
-- Test Scenarios
-- Project Structure
-- How to Run
-- Cross-Browser Testing
-- Smoke Testing
-- Allure Report
-- Parallel Execution Video
-- Technologies Used
+```text
+SHAFT-Automation-Task-2
+│
+├── .github
+│
+├── src
+│   └── test
+│       ├── java
+│       │   ├── base
+│       │   │   └── BaseTest.java
+│       │   │
+│       │   ├── pages
+│       │   │   ├── LoginPage.java
+│       │   │   ├── ProductsPage.java
+│       │   │   ├── CartPage.java
+│       │   │   └── CheckoutPage.java
+│       │   │
+│       │   └── testPackage
+│       │       ├── ExcelLoginTest.java
+│       │       ├── JsonLoginTest.java
+│       │       └── CheckoutTest.java
+│       │
+│       └── resources
+│           └── testDataFiles
+│               ├── loginTest.xlsx
+│               └── loginTest.json
+│
+├── smoke.xml
+├── parallel-testing.xml
+├── pom.xml
+├── allurerc.yaml
+├── generate_allure_report.bat
+├── README.md
+└── .gitignore
+```
 
-For the video, include this placeholder:
-[Parallel Execution Video](https://drive.google.com/file/d/1ZUZpdCcQ_zNvd1jwWctFLkn9ht08fdq0/view?usp=sharing)
+---
 
+## Framework Design
+
+The project follows the **Page Object Model (POM)** design pattern.
+
+- `BaseTest` handles browser setup and teardown.
+- Page classes contain locators and page actions.
+- Test classes contain test scenarios and validations.
+- Test data is separated from the automation code using Excel and JSON files.
+- TestNG priorities are used to control test execution order.
+
+---
+
+## Test Suites
+
+### Smoke Testing
+
+The `smoke.xml` file contains the main smoke test scenarios.
+
+Run the smoke suite using:
+
+```text
+mvn test -DsuiteXmlFile=smoke.xml
+```
+## Browser Support
+
+The tests support the following browsers:
+
+- Chrome
+- Edge
+- Firefox
+
+The browser can be selected using the Maven system property:
+
+```text
+mvn clean test -Dbrowser=chrome
+mvn clean test -Dbrowser=edge
+mvn clean test -Dbrowser=firefox
+
+### Parallel Testing
+
+The `parallel-testing.xml` file is used to execute multiple test cases in parallel.
+
+Run the parallel suite using:
+
+```text
+mvn test -DsuiteXmlFile=parallel-testing.xml
+```
+
+---
+
+## Execution
+
+Run the complete test suite using:
+
+```text
+mvn clean test
+```
+
+---
+
+## Allure Report
+
+Allure is used to generate test execution reports.
+
+Generate the Allure report using:
+
+```text
+generate_allure_report.bat
+```
+
+
+
+---
+
+## Execution Video
+
+ **[Watch Test Execution](https://drive.google.com/file/d/1ZUZpdCcQ_zNvd1jwWctFLkn9ht08fdq0/view?usp=drive_link)**
+
+
+---
