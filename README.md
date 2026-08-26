@@ -159,7 +159,7 @@ generate_allure_report.bat
 
 ---
 
-## Execution Video
+## Parallel Execution Video
 
  **[Watch Test Execution](https://drive.google.com/file/d/1ZUZpdCcQ_zNvd1jwWctFLkn9ht08fdq0/view?usp=drive_link)**
 
