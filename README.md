@@ -1,4 +1,4 @@
-Create a short and professional README.md for my GitHub repository for Automation Task #2.
+
 
 Project: SHAFT Automation Testing
 
